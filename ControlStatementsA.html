@@ -1,0 +1,399 @@
+<!doctype html>
+<head>
+<title>TechEdu5</title>
+</head>
+<body>
+<marquee attribute_name="attribute_value" attributes>
+<h1><p style="color:purple">The Control Statement in C</h1><hr></p>
+</marquee>
+
+<p style="color:red">
+<b>The Control Statement:</b>
+Control statements enable us to specify the flow of program control; ie, the order in which the</br> 
+instructions in a program must be executed. They make it possible to make decisions, to perform tasks</br>
+repeatedly or to jump from one section of code to another.</p>
+<p style="color:purple">
+There are four types of control statements in C:</p>
+<p style="color:grey">
+1' Decision making statements</br>
+2. Selection statements</br>
+3. Iteration statements</br>
+4. Jump statements</br>
+<p style="color:cream">
+<h3>Decision Making Statement:</h3> The if-else Statement
+The if-else statement is used to carry out a logical test and then take one of two possible actions</br>
+ depending on the outcome of the test (ie, whether the outcome is true or false).</p>
+<p style="color:magenta">
+Syntax:</br>
+
+if (condition)</br>
+{</br>
+  statements</br>
+}</br>
+  else</br>
+{</br>
+  statements</br>
+}</br>
+</p>
+<p style="color:blue">
+If the condition specified in the if statement evaluates to true, the statements inside the if-block</br> 
+are executed and then the control gets transferred to the statement immediately after the if-block. </br>
+Even if the condition is false and no else-block is present, control gets transferred to the statement</br>
+ immediately after the if-block.</p>
+<p style="color:green">
+The else part is required only if a certain sequence of instructions needs to be executed if the </br>
+condition evaluates to false. It is important to note that the condition is always specified in </br>
+parentheses and that it is a good practice to enclose the statements in the if block or in the </br>
+else-block in braces, whether it is a single statement or a compound statement.</p>
+<p style="color:red>
+Program checks whether the entered number is positive or negative.</p>
+<p style="color:navy"><code>
+#include<stdio.h></br>
+
+int main( )</br>
+
+   {</br>
+
+    int a;</br>
+
+    printf("n Enter a number:");</br>
+
+    scanf("%d", &a);</br>
+
+    if(a>0)</br>
+
+     { </br>
+
+      printf( "n The number %d is positive.",a);</br>
+
+     }</br>
+
+    else</br>
+
+     {</br>
+
+      printf("n The number %d is negative.",a);</br>
+
+     }</br>
+
+  return 0;</br>
+
+   }</br>
+</code></p>
+Output:</br>
+ Enter a number 7</br>
+ The number 7 is positive</br>
+
+<p style="color:red">
+The following pProgram compares two strings to check whether they are equal or not.</p>
+<p style="color:cream"><code>
+#include <stdio.h>
+
+#include <string.h></br>
+
+int main( )</br>
+
+   {</br>
+
+    char a[20] ,  b[20];</br>
+
+    printf("n Enter the first string:");</br>
+
+    scanf("%s",a);</br>
+
+    printf("n Enter the second string:");</br>
+
+    scanf("%s",b);</br>
+
+    if((strcmp(a,b)==0))</br>
+
+      {</br>
+
+       printf("nStrings are the same");</br>
+
+       }</br>
+
+    else</br>
+
+      {</br>
+
+      printf("nStrings are different");</br>
+
+      }</br>
+
+  return 0;</br>
+
+  }</br>
+</code></p>
+<p style="color:purple">
+The above program compares two strings to check whether they are the same or not. The strcmp function</br>
+ is used for this purpose. It is declared in the string.h file as:</p>
+<p style="color:green">
+int strcmp(const char *s1, const char *s2);</p>
+<p style="color:red">
+It compares the string pointed to by s1 to the string pointed to by s2. The strcmp function returns an</br>
+ integer greater than, equal to, or less than zero,  accordingly as the string pointed to by s1 is </br>
+greater than, equal to, or less than the string pointed to by s2.</p>
+<p style="color:cyan">
+Therefore in the above program, if the two strings a and b are equal , the strcmp function should</br> 
+return a 0. If it returns a 0, the strings are the same; else they are different.</p>
+<p style="color:blue">
+<b>Nested if and if-else Statements</b>
+It is also possible to embed or to nest if-else statements one within the other. Nesting is useful in</br>
+ situations where one of several different courses of action need to be selected.</p>
+
+The general format of a nested if-else statement is:</br>
+<p style="color:magenta"><code>
+if(condition1)</br>
+{</br>
+// statement(s);</br>
+}</br>
+else if(condition2)</br>
+{</br>
+//statement(s);</br>
+}</br>
+.......</br>
+.......</br>
+......</br>
+......</br>
+else if (conditionN)</br>
+{ </br>
+//statement(s);</br>
+}</br>
+else</br>
+{</br>
+//statement(s);</br>
+}</br>
+</code></p>
+<p style="color:brown">
+The above is also called the if-else ladder. During the execution of a nested if-else statement, as</br> 
+soon as a condition is encountered which evaluates to true, the statements associated with that </br>
+particular if-block will be executed and the remainder of the nested if-else statements will be </br>
+bypassed. If neither of the conditions are true, either the last else-block is executed or if the</br> 
+else-block is absent, the control gets transferred to the next instruction present immediately after 
+the else-if ladder.</p>
+<p style="color:red">
+Program makes use of the nested if-else statement to find the greatest of three numbers.</p>
+<p style="color:green"><code>
+#include<stdio.h>
+
+int main( )</br>
+   {</br>
+       int a, b,c;</br>
+       a=6,b= 5, c=10;</br>
+       if(a>b)</br>
+          {</br>
+             if(b>c)</br>
+               {</br>
+                 printf("nGreatest is: " , a);</br>
+                }</br>
+              else if(c>a)</br>
+                     {</br>
+                      printf("nGreatest is: ", c);</br>
+                     }</br>
+            }</br>
+         else if(b>c)     //outermost if-else block</br>
+                {</br>
+                 printf("nGreatest is: " , b);</br>
+                }</br>
+               else</br>
+                {</br>
+                 printf( "nGreatest is: " , c);</br>
+                }</br>
+      return 0;</br>
+    }</br>
+</code></p>
+<p style="color:cyan">
+The above program compares three integer quantities, and prints the greatest. The first if statement</br>
+ compares the values of a and b. If a>b is true, program control gets transferred to the if-else </br>
+statement nested inside the if block, where b is compared to c. If  b>c is also true, the value of a</br>
+ is printed; else the value of c and a are compared and if c>a is true, the value of c is printed.</br>
+ After this the rest of the if-else ladder is bypassed.</p>
+<p style="color:navy">
+However, if the first condition a>b is false, the control directly gets transferred to the outermost</br> 
+else-if block, where the value of b is compared with c (as a is not the greatest). If b>c is true the</br>
+ value of b is printed else the value of c is printed. Note the nesting, the use of braces, and the</br>
+ indentation. All this is required to maintain clarity.</p>
+
+<h3>2. Selection Statement: </h3>the switch-case Statement</br>
+<p style="color:purple">
+A switch statement is used for multiple way selections that will branch into different code segments</br>
+ based on the value of a variable or expression. This expression or variable must be of integer data 
+type.</p>
+<p style="color:magenta"><code>
+Syntax:</br>
+
+switch (expression)</br>
+{</br>
+  case value1:</br>
+    code segment1;</br>
+    break;</br>
+  case value2:</br>
+    code segment2;</br>
+    break;</br>
+.....</br>
+.....</br>
+.....</br>
+  case valueN:</br>
+    code segmentN;</br>
+    break;</br>
+  default:</br>
+    default code segment;</br>
+}</code></p>
+<p style="color:cream">
+The value of this expression is either generated during program execution or read in as user input.</br>
+ The case whose value is the same as that of the expression is selected and executed. The optional </br>
+default label is used to specify the code segment to be executed when the value of the expression does </br>
+not match with any of the case values.</p>
+<p style="color:blue">
+The break statement is present at the end of every case. If it were not so, the execution would continue</br>
+ on into the code segment of the next case without even checking the case value. For example, supposing</br>
+ a switch statement has five cases and the value of the third case matches the value of expression. If</br>
+ no break statement were present at the end of the third case, all the cases after case 3 would also get</br>
+ executed along with case 3. If break is present only the required case is selected and executed; after</br>
+ which the control gets transferred to the next  statement immediately after the switch statement. There</br>
+ is no break after defaultbecause after the default case the control will either way get transferred to</br>
+ </p>
+<p style="color:red">
+ A program to print the day of the week using Switch statement.</p>
+<p style="color:cream"><code>
+#include<stdio.h></br>
+
+int main( )</br>
+
+    {</br>
+
+     int day;</br>
+
+     printf("nEnter the number of the day:");</br>
+
+     scanf("%d",&day);</br>
+
+     switch(day)</br>
+        {</br>
+          case 1:</br>
+                  printf("Sunday");</br>
+                  break;</br>
+          case 2:</br>
+                  printf("Monday");</br>
+                  break;</br>
+          case 3:</br>
+                  printf("Tuesday");</br>
+                  break;</br>
+          case 4:</br>
+                  printf("Wednesday");</br>
+                  break;</br>
+          case 5:</br>
+                  printf("Thursday");</br>
+                  break;</br>
+          case 6:</br>
+                  printf("Friday");</br>
+                  break;</br>
+          case 7:</br>
+                  printf("Saturday");</br>
+                  break;</br>
+          default:</br>
+                  printf("Invalid choice");</br>
+        }</br>
+   return 0;</br>
+
+     }</br>
+</code></p>
+<p style="color:cyan">
+This is a very basic program that explains the working of the switch-case construct. Depending upon the</br>
+ number entered by the user, the appropriate case is selected and executed. For example, if the user </br>
+input is 5, then case 5 will be executed. The break statement present in case 5 will pause execution of</br>
+ the switch statement after case 5 and the control will get transferred to the next statement after 
+switch, which is:</br>
+
+return 0;</p>
+<p style="color:magenta">
+It is also possible to embed compound statements inside the case of a switch statement. These compound</br>
+ statements may contain control structures. Thus, it is also possible to have a nested switch by </br>
+embedding it inside a case.</p>
+<p style="color:navy">
+All programs written using the switch-case statement can also be written using the if-else statement.</br>
+ However, it makes good programming sense to use the if statement when you need to take some action </br>
+after evaluating some simple or complex condition which may involve a combination of relational and </br>
+logical expressions (eg, (if((a!=0)&&(b>5))).</p>
+<p style="color:orange">
+If you need to select among a large group of values, a switch statement will run much faster than a set</br>
+ of nested ifs. The switch differs from the if in that switch can only test for equality, whereas if</br>
+ can evaluate any type of Boolean expression.</p>
+<p style="color:brown">
+The switch statement must be used when one needs to make a choice from a given set of choices. The </br>
+switch case statement is generally used in menu-based applications. The most common use of a switch-case</br>
+ statement is in data handling or file processing. Most of file handling involves the common functions: </br>
+creating a file, adding records, deleting records, updating records, printing the entire file or some </br>
+selective records. The following program gives an idea of how the switch case statement may be used in</br>
+ data handling. It does not involve the code for file processing as we can discuss file handling in C </br>
+only after we have learnt advanced concepts like pointers, structures and unions.</p></br>
+
+<p style="color:red">
+ A switch case statement used in data file processing.</p>
+<p style="color:blue"><code>
+#include<stdio.h></br>
+
+int main()</br>
+
+    { //create file &set file pointer .</br>
+
+     int choice;</br>
+
+     printf("n Please select from the following options:");</br>
+
+     printf("n 1. Add a record at the end of the file.");</br>
+
+     printf("n 2. Add a record at the beginning of the file:");</br>
+
+     printf("n 3. Add a record after a particular record:";</br>
+
+     printf("nPlease enter your choice:(1/2/3)?");</br>
+
+     scanf("%d",&choice);</br>
+
+     switch(choice)</br>
+
+         {</br>
+
+           case 1:</br>
+
+                   //code to add record at the end of the file</br>
+
+                   break;</br>
+
+           case 2:</br>
+
+                   //code to add record at the beginning of the file</br>
+
+                    break;</br>
+
+           case 3:</br>
+
+                   //code to add record after a particular record</br>
+
+                    break;</br>
+
+           default:</br>
+
+                   printf("n Wrong Choice");</br>
+
+        }</br>
+
+    return 0;</br>
+
+    }</br>
+</code></p>
+<p style="color:red">
+The above example of switch-case generally involves nesting the switch-case construct inside an</br>
+ iteration construct like do-while. In our nex post, we will discuss these iteration statements.</p>
+
+<p><h2><code>
+<a href="Preprocessor.html">To move up ^</a> </br>    
+<a href="ControlStatementsB.html">Next Page ></a></br>
+<a href="OperatorsA.html">Previous page<<</a></br>
+<a href="TechEdu.html">Menu page</a>
+</h2></p></code>
+
+</body>
+</html>

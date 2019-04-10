@@ -1,0 +1,132 @@
+<!doctype html>
+<head>
+<title>TechEdu5</title>
+</style>
+</head>
+<body>
+<marquee attribute_name="attribute_value" attributes>
+<h1><p style="color:purple">Operators in C / Set 1 (Arithmetic Operators)</h1><hr></p>
+</marquee>
+
+<p style="color:red"><b>
+ Operators are the foundation of any programming language. Thus the functionality of C language is
+ incomplete without the use of operators. Operators allow us to perform different kinds of operations 
+ on operands. In C, operators in Can be categorized in following categories:</p></b>
+ 
+  <p style="color:green">
+ 1. Arithmetic Operators (+ , - , * , / , % , post-increment, pre-increment,post-decrement,
+ pre-decrement).<br>
+ 2. Relational Operators (== , != , > , < , >= & <=) Logical Operators (&&, || and !)<br>
+ 3. Bitwise Operators (&, |, ^, ~, >> and <<).<br>
+ 4. Assignment Operators (= , += , -= , *= , etc).<br>
+ 5. Other Operators (conditional, comma, sizeof, address, redirecton)</p>
+ <p style="color:blue"><b>Arithmetic Operators: These are used to perform arithmetic/mathematical
+ operations on operands.</b></P>
+  <h2>1. Arithmetic Operators:</h2>
+
+ <p style="color:orange">The binary operators falling in this category are:</p>
+ <ol type="1">
+ <p style="color:indigo"><li>Addition: The ‘+’ operator adds two operands. For example, x+y.</li><br>
+ <li>Subtraction: The ‘-‘ operator subtracts two operands. For example, x-y.</li><br>
+ <li>Multiplication: The ‘*’ operator multiplies two operands. For example, x*y.</li><br>
+ <li>Division: The ‘/’ operator divides the first operand by the second. For example, x/y.</li><br>
+ <li>Modulus: The ‘%’ operator returns the remainder when first operand is divided by the second. 
+ For example, x%y.</li><br></p>
+<h3><p style="color:red"> C program to demonstrate working of binary arithmetic operators</p></h3>
+#include<stdio.h><br>
+ 
+int main()<br>
+{<br>
+    int a = 10, b = 4, res;<br>
+    printf("a is %d and b is %d\n", a, b);<br>
+ 
+    res = a+b; <p style="color:cyan">//addition</p>
+    printf("a+b is %d\n", res);
+ 
+    res = a-b;<p style="color:cyan"> //subtract</p>
+    printf("a-b is %d\n", res);
+ 
+    res = a*b; <p style="color:cyan">//multiplication</p>
+    printf("a*b is %d\n", res);
+ 
+    res = a/b; <p style="color:cyan">//division</p>
+    printf("a/b is %d\n", res);
+ 
+    res = a%b; <p style="color:cyan">//modulus</p>
+    printf("a%%b is %d\n", res);
+ 
+    return 0;<br>
+}<br>
+<p style="color:green">
+Output:<br>
+
+a is 10 and b is 4<br>
+a+b is 14<br>
+a-b is 6<br>
+a*b is 40<br>
+a/b is 2<br>
+a%b is 2</p><br>
+<h3><p style="color:red">The ones falling into the category of unary arithmetic operators are:</p></h3>
+<p style="color:blue">
+<ol type="1">
+<li>Increment: The ‘++’ operator is used to increment the value of an integer. When placed before the 
+variable name (also called pre-increment operator), its value is incremented instantly. 
+For example, ++x.<br>
+And when it is placed after the variable name (also called post-increment operator), its value is 
+preserved temporarily until the execution of this statement and it gets updated before the execution
+ of the next statement. For example, x++.</li>
+
+<li>Decrement: The ‘–‘ operator is used to decrement the value of an integer. When placed before the 
+variable name (also called pre-decrement operator), its value is decremented instantly.
+ For example, –x.<br>
+And when it is placed after the variable name (also called post-decrement operator), its value is
+ preserved temporarily until the execution of this statement and it gets updated before the execution
+ of the next statement. For example, x–.</p></li>
+<h3><p style="color:red">C program to demonstrate working of Unary arithmetic operators</p></h3>
+#include<stdio.h><br>
+ 
+int main()<br>
+{<br>
+    int a = 10, b = 4, res;<br>
+ 
+   <p style="color:cyan"> // post-increment example: res is assigned 10 only, a is not updated yet</p>
+    res = a++;<br>
+    printf("a is %d and res is %d\n", a, res);<br>
+<p style="color:cyan">  //a becomes 11 now
+ 
+ 
+<p style="color:cyan"> // post-decrement example: res is assigned 11 only, a is not updated yet</p>
+    res = a--;<br>
+    printf("a is %d and res is %d\n", a, res); <p style="color:cyan"> //a becomes 10 now</p>
+ 
+ 
+<p style="color:cyan">// pre-increment example: res is assigned 11 now since a is updated here itself</p>
+    res = ++a;<br>
+    <p style="color:cyan">// a and res have same values = 11</p>
+    printf("a is %d and res is %d\n", a, res);<br>
+ 
+ 
+<p style="color:cyan">// pre-decrement example: res is assigned 10 only since a is updated here itself</p>
+    res = --a;<br>
+<p style="color:cyan">// a and res have same values = 10</p>
+    printf("a is %d and res is %d\n",a,res); <br>
+ 
+    return 0;<br>
+}<br>
+<p style="color:green">
+Output:<br>
+a is 11 and res is 10<br>
+a is 10 and res is 11<br>
+a is 11 and res is 11<br>
+a is 10 and res is 10<br>
+
+
+<p><h2><code>
+<a href="Operators.html">To move up ^</a> <br>
+<a href="OperatorsB.html">Next Page ></a><br>
+<a href="Preprocessor.html">Next Page >></a><br>
+<a href="Operators.html">Previous page<<</a><br>
+<a href="TechEdu.html">Menu page</a>
+</h2></p></code>
+</body>
+</html>

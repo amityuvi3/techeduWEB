@@ -1,0 +1,189 @@
+<!doctype html>
+<head>
+<title>TechEdu5</title>
+</head>
+<body>
+<marquee attribute_name="attribute_value" attributes>
+<h1><p style="color:purple">Interview Questions</h1><hr></p>
+</marquee>
+
+<p style="color:red">
+<b>1. What is the difference between Call by Value and Call by Reference?</b> </br> 
+When using Call by Value, you are sending the value of a variable as parameter to a function, whereas 
+Call by Reference sends the address of the variable. Also, under Call by Value, the value in the 
+parameter is not affected by whatever operation that takes place, while in the case of Call by Reference
+, values can be affected by the process within the function.</p> </br> 
+<p style="color:purple">
+<b>2. What is a stack?</b> </br> 
+A stack is one form of a data structure. Data is stored in stacks using the FILO (First In Last Out)
+ approach. At any particular instance, only the top of the stack is accessible, which means that in 
+order to retrieve data that is stored inside the stack, those on the upper part should be extracted 
+first. Storing data in a stack is also referred to as a PUSH, while data retrieval is referred to as a
+ POP.</p> </br> 
+<p style="color:brown">
+<b>3. What is a sequential access file?</b> </br> 
+When writing programs that will store and retrieve data in a file, it is possible to designate that file
+ into different forms. A sequential access file is such that data are saved in sequential order: one 
+data is placed into the file after another. To access a particular data within the sequential access
+ file, data has to be read one data at a time, until the right one is reached.</p> </br> 
+<p style="color:navy">
+<b>4. Differentiate Source Codes from Object Codes?</b> </br> 
+Source codes are codes that were written by the programmer. It is made up of the commands and other
+ English-like keywords that are supposed to instruct the computer what to do. However, computers would 
+not be able to understand source codes. Therefore, source codes are compiled using a compiler. The
+ resulting outputs are object codes, which are in a format that can be understood by the computer
+ processor. In C programming, source codes are saved with the file extension .C, while object codes are
+ saved with the file extension .OBJ</p> </br> 
+<p style="color:cyan">
+<b>5. What is the use of a ‘\0’ character?</b> </br> 
+It is referred to as a terminating null character, and is used primarily to show the end of a string 
+value.</p> </br> 
+ <p style="color:blue">
+<b>6. Compare and contrast compilers from interpreters.</b> </br> 
+Compilers and interpreters often deal with how program codes are executed. Interpreters execute program
+ codes one line at a time, while compilers take the program as a whole and convert it into object code,
+ before executing it. The key difference here is that in the case of interpreters, a program may 
+encounter syntax errors in the middle of execution, and will stop from there. On the other hand,
+ compilers check the syntax of the entire program and will only proceed to execution when no syntax 
+errors are found.</p> </br> 
+<p style="color:magenta">
+<b>7. What are compound statements?</b> </br> 
+
+Compound statements are made up of two or more program statements that are executed together. This 
+usually occurs while handling conditions wherein a series of statements are executed when a TRUE or 
+FALSE is evaluated. Compound statements can also be executed within a loop. Curly brackets { } are 
+placed before and after compound statements.</p> </br> 
+<p style="color:violet">
+<b>8. How do you generate random numbers in C?</b> </br> 
+Random numbers are generated in C using the rand() command. For example: anyNum = rand() will generate
+ any integer number beginning from 0, assuming that anyNum is a variable of type integer.</p> </br> 
+<p style="color:green">
+<b>9. What are logical errors and how does it differ from syntax errors?</b> </br> 
+
+Program that contains logical errors tend to pass the compilation process, but the resulting output may
+ not be the expected one. This happens when a wrong formula was inserted into the code, or a wrong 
+sequence of commands was performed. Syntax errors, on the other hand, deal with incorrect commands that
+ are misspelled or not recognized by the compiler.</p> </br> 
+<p style="color:orange">
+<b>10. What are the different types of control structures in programming?</b> </br> 
+There are 3 main control structures in programming: Sequence, Selection and Repetition. Sequential
+ control follows a top to bottom flow in executing a program, such that step 1 is first perform, 
+followed by step 2, all the way until the last step is performed. Selection deals with conditional 
+statements, which mean codes are executed depending on the evaluation of conditions as being TRUE or 
+FALSE. This also means that not all codes may be executed, and there are alternative flows within. 
+Repetitions are also known as loop structures, and will repeat one or two program statements set by a
+ counter.</p> </br> 
+
+<p style="color:purple">
+<b>11. What are preprocessor directives?</b> </br> 
+Preprocessor directives are placed at the beginning of every C program. This is where library files are
+ specified, which would depend on what functions are to be used in the program. Another use of
+ preprocessor directives is the declaration of constants.Preprocessor directives begin with the
+ # symbol.</p> </br> 
+<p style="color:red">
+<b>12. What are the different file extensions involved when programming in C?</b> </br> 
+Source codes in C are saved with .C file extension. Header files or library files have the .H file 
+extension. Every time a program source code is successfully compiled, it creates an .OBJ object file, 
+and an executable .EXE file. </p> </br> 
+<p style="color:navy">
+<b>13. What are reserved words?</b> </br> 
+Reserved words are words that are part of the standard C language library. This means that reserved 
+words have special meaning and therefore cannot be used for purposes other than what it is originally 
+intended for. Examples of reserved words are int, void, and return.</p> </br> 
+<p style="color:brown">
+<b>14. What are linked list?</b> </br> 
+A linked list is composed of nodes that are connected with another. In C programming, linked lists are
+ created using pointers. Using linked lists is one efficient way of utilizing memory for storage.</p></br> 
+<p style="color:grey">
+<b>15. What is the difference between functions abs() and fabs()?</b> </br> 
+These 2 functions basically perform the same action, which is to get the absolute value of the given
+ value. Abs() is used for integer values, while fabs() is used for floating type numbers. Also, the
+ prototype for abs() is under <stdlib.h>, while fabs() is under <math.h>.</p> </br> 
+<p style="color:cyan">
+<b>16.What are enumerated types?</b> </br> 
+Enumerated types allow the programmer to use more meaningful words as values to a variable. Each item
+ in the enumerated type variable is actually associated with a numeric code. For example, one can 
+create an enumerated type variable named DAYS whose values are Monday, Tuesday… Sunday. </b> </br> 
+<p style="color:magenta">
+<b>17.What does the function toupper() do?</b> </br> 
+
+It is used to convert any letter to its upper case mode. Toupper() function prototype is declared in  
+<ctype.h>. Note that this function will only convert a single character, and not an entire string.</p> </br> 
+<p style="color:navy">
+<b>18. Is it possible to have a function as a parameter in another function?</b> </br> 
+Yes, that is allowed in C programming. You just need to include the entire function prototype into the
+ parameter field of the other function where it is to be used.</p> </br> 
+<p style="color:blue">
+<b>19. What is the difference between functions getch() and getche()?</b> </br> 
+Both functions will accept a character input value from the user. When using getch(), the key that was
+ pressed will not appear on the screen, and is automatically captured and assigned to a variable. When 
+using getche(), the key that was pressed by the user will appear on the screen, while at the same time
+ being assigned to a variable. </p> </br> 
+<p style="color:purple">
+<b>20. What are structure types in C?</b> </br> 
+Structure types are primarily used to store records. A record is made up of related fields. This makes
+ it easier to organize a group of related data.</b> </br> 
+<p style="color:cyan">
+<b>21. What does the characters “r” and “w” mean when writing programs that will make use of files?</b> </br> 
+“r” means “read” and will open a file as input wherein data is to be retrieved. “w” means “write”, and 
+will open a file for output. Previous data that was stored on that file will be erased.</p> </br> 
+<p style="color:orange">
+<b>22. What is the difference between text files and binary files?</b> </br> 
+Text files contain data that can easily be understood by humans. It includes letters, numbers and other
+ characters. On the other hand, binary files contain 1s and 0s that only computers can interpret.</p></br>  
+<p style="color:green">
+<b>23. What is the advantage of a random access file?</b> </br> 
+If the amount of data stored in a file is fairly large, the use of random access will allow you to
+ search through it quicker. If it had been a sequential access file, you would have to go through one
+ record at a time until you reach the target data. A random access file lets you jump directly to the 
+target address where data is located. </b> </br> 
+<p style="color:blue">
+<b>24. How do you search data in a data file using random access method?</b> </br> 
+Use the fseek() function to perform random access input/ouput on a file. After the file was opened by 
+the fopen() function, the fseek would require three parameters to work: a file pointer to the file, the
+ number of bytes to search, and the point of origin in the file.</p> </br> 
+
+<p style="color:brown">
+<b>25. Is there a built-in function in C that can be used for sorting data?</b> </br> 
+Yes, use the qsort() function. It is also possible to create user defined functions for sorting, such
+ as those based on the balloon sort and bubble sort algorithm.</p> </br>  
+<p style="color:navy">
+<b>26. What are the advantages and disadvantages of a heap?</b> </br> 
+Storing data on the heap is slower than it would take when using the stack. However, the main advantage
+ of using the heap is its flexibility. That’s because memory in this structure can be allocated and 
+remove in any particular order. Slowness in the heap can be compensated if an algorithm was well 
+designed and implemented. </p> </br> 
+<p style="color:magenta">
+<b>27. How do you convert strings to numbers in C?</b> </br> 
+You can write you own functions to do string to number conversions, or instead use C’s built in 
+functions. You can use atof to convert to a floating point value, atoi to convert to an integer value, 
+and atol to convert to a long integer value.</p> </br> 
+<p style="color:purple">
+<b>28. What is the use of a semicolon (;) at the end of every program statement?</b> </br> 
+It has to do with the parsing process and compilation of the code. A semicolon acts as a delimiter, so 
+that the compiler knows where each statement ends, and can proceed to divide the statement into smaller
+ elements for syntax checking.</p> </br> 
+<p style="color:orange">
+<b>29. What are binary trees?</b> </br> 
+Binary trees are actually an extension of the concept of linked lists. A binary tree has two pointers,
+ a left one and a right one. Each side can further branch to form additional nodes, which each node
+ having two pointers as well.</p> </br> 
+
+
+<p><h2><code>
+<a href="PIC.html">To move up ^</a> </br>    
+<a href="MCQS.html">Next Page >></a></br>
+<a href="DMA.html">Previous page<<</a></br>
+<a href="TechEdu.html">Menu page</a>
+</h2></p></code>
+ 
+</body>
+</html>
+
+
+
+
+
+
+
+

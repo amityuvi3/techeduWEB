@@ -1,0 +1,195 @@
+﻿<!doctype html>
+<head>
+<title>TechEdu5</title>
+</head>
+<body>
+<marquee attribute_name="attribute_value" attributes>
+<h1><p style="color:purple">String in C Programming </h1><hr></p>
+</marquee>
+
+
+
+<h2>String in C Programming </h2>
+<p style="color:red">
+In this article, you'll learn to handle strings and its operations in C. You'll learn to declare them,
+ initialize them and use them for various input/output operations.</p>
+
+<p style="color:grey">
+In C programming, array of characters is called a string. A string is terminated by a null character /0.
+ For example:</br>
+"c string tutorial"</br>
+Here, "c string tutorial" is a string. When, compiler encounter strings, it appends a null character /0 
+at the end of string.</p>
+
+<h3>Declaration of strings</h3>
+<p style="color:blue">
+Before we actually work with strings, we need to declare them first.</br>
+
+Strings are declared in a similar manner as arrays. Only difference is that, strings are of char type.
+</p>
+<p style="color:brown"></br>
+Using arrays</br>
+char s[5];</br>
+Declaration of strings in C language</br>
+
+Using pointers</br>
+Strings can also be declared using pointer.</br>
+
+char *p;</br>
+Initialization of strings</br>
+</p>
+<p style="color:green">
+<b>In C, string can be initialized in a number of different ways.</p>
+
+For convenience and ease, both initialization and declaration are done in the same step.</br>
+<p style="color:navy"><code>
+Initialization of strings in C programming are:</br>
+ 
+Using arrays</br>
+char c[] = "abcd";</br>
+     OR,</br>
+char c[50] = "abcd";</br>
+     OR,</br>
+char c[] = {'a', 'b', 'c', 'd', '\0'};</br>
+     OR,</br>
+char c[5] = {'a', 'b', 'c', 'd', '\0'};</br>
+</code></p>
+
+The given string is initialized and stored in the form of arrays as above.</br>
+<p style="color:magenta">
+Using pointers</br>
+String can also be initialized using pointers as:</br>
+
+char *c = "abcd";</br>
+Reading Strings from user</br>
+You can use the scanf() function to read a string like any other data types.</br>
+
+However, the scanf() function only takes the first entered word. The function terminates when it
+ encounters a white space (or just space).</p>
+<p style="color:purple">
+Reading words from user</br>
+char c[20];</br>
+scanf("%s", c);</br>
+</p>
+<p style="color:red">
+Write a C program to illustrate how to read string from terminal Using scanf() .</p>
+<p style="color:cyan"><code>
+#include <stdio.h></br>
+int main()</br>
+{</br>
+    char name[20];</br>
+    printf("Enter name: ");</br>
+    scanf("%s", name);</br>
+    printf("Your name is %s.", name);</br>
+    return 0;</br>
+}</br>
+</code></p>
+<p style="color:blue">
+Output:</br>
+Enter name: Dennis Ritchie</br>
+Your name is Dennis.</br>
+Here, program ignores Ritchie because, scanf() function takes only a single string before the white 
+space, i.e. Dennis.</p>
+<p style="color:cream">
+Reading a line of text</br>
+An approach to reading a full line of text is to read and store each character one by one.</p>
+<p style ="color:red">
+Using getchar() to read a line of text</br>
+<b>Write a C program to read line of text character by character Using getchar().</b></p>
+<p style ="color:blue"><code>
+#include <stdio.h></br>
+int main()</br>
+{</br>
+    char name[30], ch;</br>
+    int i = 0;</br>
+    printf("Enter name: ");</br>
+    while(ch != '\n')  </br>
+  // terminates if user hit enter</br>
+    {</br>
+        ch = getchar();</br>
+        name[i] = ch;
+        i++;</br>
+    }</br>
+    name[i] = '\0';    </br>
+   // inserting null character at end</br>
+    printf("Name: %s", name);</br>
+    return 0;</br>
+}</br>
+</code></p>
+<p style ="color:magenta">
+In the program above, using the function getchar(), ch gets a single character from the user each time.</br>
+
+This process is repeated until the user enters return (enter key). Finally, the null character is 
+inserted at the end to make it a string.</br>
+
+This process to take string is tedious.
+</p>
+
+<p style ="color:red">
+To make life easier, there are predefined functions gets() and puts in C language to read and display 
+string respectively.</br>
+Using standard library function to read a line of text</br>
+<b>Write a C program to read line of text using gets() and puts()</b>
+<p style ="color:green"><code>
+#include <stdio.h></br>
+int main()</br>
+{</br>
+    char name[30];</br>
+    printf("Enter name: ");</br>
+    gets(name);    </br>
+ //Function to read string from user.</br>
+    printf("Name: ");</br>
+    puts(name);    </br>
+//Function to display string.</br>
+    return 0;</br>
+}</br>
+</code></p>
+<p style ="color:
+Output:</br>
+
+Enter name: Tom Hanks</br>
+Name: Tom Hanks</br>
+</p>
+<p style ="color:cyan">
+Passing Strings to Functions</br>
+Strings are just char arrays. So, they can be passed to a function in a similar manner as arrays.</br>
+
+Learn more about passing array to a function.
+</p>
+<p style ="color:red"><code>
+#include <stdio.h></br>
+void displayString(char str[]);</br>
+
+int main()</br>
+{</br>
+    char str[50];</br>
+    printf("Enter string: ");</br>
+    gets(str);      </br>       
+    displayString(str);  </br>  
+ // Passing string c to function. </br>   
+    return 0;</br>
+}</br>
+void displayString(char str[])</br>
+{</br>
+    printf("String Output: ");</br>
+    puts(str);</br>
+}</br>
+</p>
+<p style ="color:blue">
+Here, string c is passed from main() function to user-defined function displayString(). In function 
+declaration, str[] is the formal argument.</p>
+<p style ="color:magenta">
+String handling functions</br>
+There are various string operations you can perform manually like: finding the length of a string, 
+concatenating (joining) two strings etc.</p>
+
+
+<p><h2><code>
+<a href="String.html">To move up ^</a> <br>    
+<a href="Functions.html">Next Page ></a><br>
+<a href="ArrayB.html">Previous page<</a><br>
+<a href="TechEdu.html">Menu page</a>
+</h2></p></code>
+
+</body>
+</html>

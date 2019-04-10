@@ -1,0 +1,216 @@
+<!doctype html>
+<head>
+<title>TechEdu5</title>
+</head>
+<body>
+<marquee attribute_name="attribute_value" attributes>
+<h1><p style="color:purple">Control Statement in C (page 2)</h1><hr></p>
+</marquee>
+
+<h3> Iteration Statements</h3>
+ <p style="color:red">
+An iteration statement, or loop, repeatedly executes a statement, known as the loop body, until the 
+controlling expression is false (0). The control expression must have a scalar type.</p>
+<p style="color:brown">
+The while statement evaluates the control expression before executing the loop body .</p>
+<p style="color:magenta">
+The do statement evaluates the control expression after executing the loop body; at least one execution
+ of the loop body is guaranteed .</p>
+<p style="color:purple">
+The for statement executes the loop body based on the evaluation of the second of three expressions.</p>
+
+<h3>The while Statement</h3>
+<p style="color:green">
+The while statement evaluates a control expression before each execution of the loop body. If the 
+control expression is true (nonzero), the loop body is executed. If the control expression is false
+ (0), the while statement terminates. The while statement has the following syntax:</p>
+<p style="color:cyan"><code>
+while ( expression )</br>
+
+   statement</br>
+Consider the following while statement:</br>
+
+n = 0;</br>
+while (n < 10)</br>
+   {</br>
+      a[n] = n;</br>
+      n++;</br>
+   }</br>
+</code></p>
+<p style="color:blue">
+This statement tests the value of n ; if n is less than 10, it assigns n to the nth element of the
+ array a and then increments n . The control expression (in parentheses) is then evaluated; if true 
+(nonzero), the loop body is executed again; if false (0), the while statement terminates. If the 
+statement n++ were missing from the loop body, this while statement would never terminate. If the 
+statement n = 0 were replaced by the statement n = 10 , the control expression is initially false (0),
+ and the loop body is never executed.</p>
+
+<h3>The do Statement</h3>
+<p style="color:red">
+The do statement evaluates the control expression after each execution of the loop body. The do 
+statement has the following syntax:</p>
+<p style="color:grey"><code>
+do</br>
+{</br>
+   statement</br>
+}</br>
+   while ( expression ) ;</br>
+</p></code>
+<p style="color:blue">
+The loop body is executed at least once. The control expression is evaluated after each execution of 
+the loop body. If the control expression is true (nonzero), the statement is executed again. If the
+ control expression is false (0), the do statement terminates.</p>
+
+<h3>The for Statement</h3>
+<p style="color:orange">
+The for statement evaluates three expressions and executes the loop body until the second controlling
+ expression evaluates to false (0). The for statement is useful for executing a loop body a specified 
+number of times. The for statement has the following syntax:</p>
+<p style="color:brown"><code>
+for ( expression-1(opt) ;</br>
+
+   expression-2(opt) ; expression-3(opt))</br>
+   statement</br>
+The for statement is equivalent to the following code:</br>
+
+expression-1;</br>
+while ( expression-2 )</br>
+
+   {</br>
+   statement</br>
+   expression-3 ;</br>
+   }</br>
+</p></code>
+<p style="color:green">
+The for statement executes the loop body zero or more times. Semicolons (;) are used to separate the 
+control expressions. A for statement executes the following steps:</p>
+<p style="color:purple">
+expression-1 is evaluated once before the first iteration of the loop. This expression usually
+ specifies the initial values for variables used in the loop.</br>
+expression-2 is any scalar expression that determines whether to terminate the loop. expression-2 
+is evaluated before each loop iteration. If the expression is true (nonzero), the loop body is executed.
+ If the expression is false (0), execution of the for statement terminates.</br>
+expression-3 is evaluated after each iteration.</br>
+<p style="color:magenta">
+The for statement executes until expression-2 is false (0), or until a jump statement, such as break
+ or goto , terminates execution of the loop.</p>
+Any of the three expressions in a for loop can be omitted:</br>
+<p style="color:purple">
+If expression-2 is omitted, the test condition is always true; that is, the while loop equivalent 
+becomes while(1) . This is an infinite loop. For example:</br>
+for (i = 0;  ;i++)</br>
+    statement;</br></p>
+<p style="color:cyan">
+Infinite loops can be terminated with a break , return , or goto statement within the loop body.</br>
+<p style="color:blue">
+If either expression-1 or expression-3 is omitted from the for statement, the omitted expression is 
+evaluated as a void expression and is effectively dropped from the expansion. For example:</br>
+n = 1;</br>
+for ( ; n < 10; n++)</br>
+   func(n);</br>
+</p>
+In this example, n is initialized before the for statement is executed.</br>
+
+<h2>4. Jump Statements</h2>
+<p style="color:red">
+Jump statements cause an unconditional jump to another statement elsewhere in the code. They are used
+ primarily to interrupt switch statements and loops.</p>
+<p style="color:blue">
+The jump statements are the goto statement, the continue statement, the break statement, and the return
+ statement, which are discussed in the following sections.</p>
+
+<h3>The goto Statement</h3>
+<p style="color:green">
+The goto statement unconditionally transfers program control to a labeled statement, where the label 
+identifier is in the scope of the function containing the goto statement. The labeled statement is the
+ next statement executed. The goto statement has the following syntax:</br>
+
+goto identifier;</p>
+<p style="color:cyan">
+Care must be taken when branching into a block by using the goto statement, because storage is
+ allocated for automatic variables declared within a block when the block is activated. When a goto 
+statement branches into a block, automatic variables declared in the block are not initialized.</p>
+
+<h3>The continue Statement</h3>
+<p style="color:magenta">
+The continue statement passes control to the end of the immediately enclosing while , do , or for 
+statement. The continue statement has the following syntax:</br>
+
+continue;</p>
+<p style="color:purple">
+The continue statement is equivalent to a goto statement within an iteration statement that passes 
+control to the end of the loop body. For example, the following two loops are equivalent:</p>
+<p style="color:blue">
+while(1)</br>                           
+{  </br>                               
+   ....</br>                                  
+   ....</br>                                  
+   ...</br>                                  
+  goto label_1;</br>                    
+   ....</br>                                  
+   ....</br>                                  
+   ...</br>                                 
+  label_1:</br>
+   ;   </br>                               
+ } </br>
+
+while(1)</br>
+{  </br>
+...
+...</br>
+
+continue;</br>
+...</br>
+...</br>
+;</br>
+} </br>
+ </code></p>
+<p style="color:green">                                                            
+The continue statement can be used only in loops. A continue inside a switch statement that is inside 
+a loop causes continued execution of the enclosing loop after exiting from the body of the switch 
+statement.</p>
+<h3>The break Statement</h3>
+<p style="color:brown">
+The break statement terminates execution of the immediately enclosing while , do , for , or switch 
+statement. Control passes to the statement following the loop body (or the compound statement of a
+ switch statement). The break statement has the following syntax:</br>
+
+break;</p>
+
+<h3>The return Statement</h3>
+<p style="color:red">
+The return statement terminates execution of a function and returns control to the calling function,
+ with or without a return value. A function may contain any number of return statements. The return 
+statement has the following syntax:</br>
+
+return expression(opt);</p>
+<p style="color:navy">
+If present, the expression is evaluated and its value is returned to the calling function. If necessary,
+ its value is converted to the declared type of the containing function's return value.</p>
+
+A r<p style="color:cyan">
+Return statement with an expression cannot appear in a function whose return type is void .</br>
+
+If there is no expression and the function is not defined as void , the return value is undefined. 
+For example, the following main function returns an unpredictable value to the operating system:</br>
+</p>
+<p style="color:green">
+main ( )</br>
+  {</br>
+   return;</br>
+  }</br>
+
+Reaching the closing brace that terminates a function is equivalent to executing a return statement
+ without an expression.</p>
+
+
+
+<p><h2><code>
+<a href="ControlStatementsB.html">To move up ^</a> </br>    
+<a href="ArrayA.html">Next Page >></a></br>
+<a href="ControlStatementsA.html">Previous page<<</a></br>
+<a href="TechEdu.html">Menu page</a>
+</h2></p></code>
+
+</body>
+</html>

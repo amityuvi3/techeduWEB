@@ -1,0 +1,68 @@
+<!doctype html>
+<head>
+<title>TechEdu1</title>
+</head>
+<body>
+<marquee attribute_name="attribute_value" attributes>
+<h1><p style="color:purple">C Language Introduction</h1><hr></p>
+</marquee>
+<p style="color:darkred">C is a procedural programming language. It was initially developed by Dennis Ritchie between 1969 and 1973. 
+It was mainly developed as a system programming language to write operating system. 
+The main features of C language include low-level access to memory, simple set of keywords, 
+and clean style, these features make C language suitable for system programming like 
+operating system or compiler development.Many later languages have borrowed syntax/features
+ directly or indirectly from C language. Like syntax of Java, PHP, JavaScript and many other
+ languages is mainly based on C language. C++ is nearly a superset of C language 
+(There are few programs that may compile in C, but not in C++).
+</p><br/>
+Beginning with C programming:<br/>
+
+<p style="color:indigo">1) Finding a Compiler:
+Before we start C programming, we need to have a compiler to compile and run our programs. 
+There are certain online compilers like https://ide.geeksforgeeks.org/, http://ideone.com/ 
+or http://codepad.org/ that can be used to start C without installing a compiler.
+</p><br/>
+<p style="color:magenta">Windows: There are many compilers available freely for compilation of C programs like Code Blocks 
+ and Dev-CPP.   We strongly recommend Code Blocks.</><br>
+
+Linux: For Linux, gcc comes bundled with the linux,  Code Blocks can also be used with Linux.<br>
+
+2) Writing first program:<br>
+Following is first program in C<br><br>
+<p style="color:blue">
+#include <stdio.h><br>
+int main(void)<br>
+{<br>
+    printf("TechEdu");<br>
+    return 0;<br>
+}</p>
+<p style="color:blue">output :TechEdu</p><br>
+Let us analyze the program line by line.<br>
+<p style="color:red">Line 1: [ #include <stdio.h> ] In a C program, all lines that start with # are processed by preprocessor
+ which is a program invoked by the compiler. In a very basic term, preprocessor takes a C program and 
+produces another C program. The produced program has no lines starting with #, all such lines are 
+processed by the preprocessor. In the above example, preprocessor copies the preprocessed code of stdio.
+h to our file. The .h files are called header files in C. These header files generally contain 
+declaration of functions. We need stdio.h for the function printf() used in the program.</p><br>
+
+<p style="color:green">Line 2 [ int main(void) ] There must to be starting point from where execution of compiled C program 
+begins. In C, the execution typically begins with first line of main(). The void written in brackets
+ indicates that the main doesn’t take any parameter (See this for more details). main() can be written 
+to take parameters also. We will be covering that in future posts.</p>
+<p style="color:purple">The int written before main indicates return type of main(). The value returned by main indicates
+ status of program termination. See this post for more details on return type.</p><br>
+
+<p style="color :brown">Line 3 and 6: [ { and } ] In C language, a pair of curly brackets define a scope and mainly used in 
+functions and control statements like if, else, loops. All functions must start and end with curly 
+brackets.</p><br>
+
+
+
+<p><h2>
+<a href="Introduction.html">To move up ^</a><br>
+<a href="VariableDeclarationAndDefinition.html">Next Page >></a><br>
+<a href="TechEdu.html">Menu page</a>
+</h2></p>
+
+</body>
+</html>

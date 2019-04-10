@@ -1,0 +1,214 @@
+<!doctype html>
+<head>
+<title>TechEdu3</title>
+</head>
+<body>
+<marquee attribute_name="attribute_value" attributes>
+<h1><p style="color:purple">Data Types in C</h1><hr></p>
+</marquee>
+
+
+
+<p style="color:red">Each variable in C has an associated data type. Each data type requires different
+ amounts of memory and has some specific operations which can be performed over it. Let us briefly
+ describe them one by one:</p>
+
+<p style="color:green">Following are the examples of some very common data types used in C:</p>
+
+<p style="color:blue">char: The most basic data type in C. It stores a single character and requires a
+ single byte of memory in almost all compilers.</p>
+<p style="color:indigo">int: As the name suggests, an int variable is used to store an integer.</p>
+<p style="color:magenta">float: It is used to store decimal numbers (numbers with floating point value)
+ with single precision.</p>
+<p style="color:green">double: It is used to store decimal numbers (numbers with floating point value)
+ with double precision.</p>
+
+
+
+ 
+
+<p style="color:grey".Different data types also have different ranges upto which they can store numbers.
+ These ranges may vary from compiler to compiler. Below is list of ranges along with the memory 
+requirement and format specifiers on 32 bit gcc compiler.</p><br>
+<table border="3px" width="1200" bgcolor="pink">
+<tr><th>Data Type</th>
+<th>Memory </th>
+<th>(In bytes)</th>
+<th>RangeFormat Specifier</th>
+</tr>
+
+<tr><td align="center">short int</td><td align="center">(2)</td><td align="center">(-32,768 to 32,767)</td><td align="center">%hd</td></tr>
+<tr><td align="center">unsigned short int</td><td align="center">(2)</td><td align="center">( 0 to 65,535)</td><td align="center">%u</td></tr>
+<tr><td align="center">unsigned int</td><td align="center">(4)</td><td align="center">(0 to 4,294,967,295)</td><td align="center">%u</td></tr>
+<tr><td align="center"> int</td><td align="center">(4)</td><td align="center">(-2,147,483,648 to 2,147,483,647)</td><td align="center">%d</td></tr>
+<tr><td align="center">long int</td><td align="center">(4)</td><td align="center">(-2,147,483,648 to 2,147,483,647)</td><td align="center">%ld</td></tr>
+<tr><td align="center">unsigned long int</td><td align="center">(4)</td><td align="center">(0 to 4,294,967,295)</td><td align="center">%lu</td></tr>
+<tr><td align="center">long long int</td><td align="center">(8)</td><td align="center">(-(2^63) to (2^63)-1)</td><td align="center">%lld</td></tr>
+<tr><td align="center">unsigned long long int</td><td align="center">(8)</td><td align="center">(0 to 18,446,744,073,709,551,615)</td><td align="center">%llu</td></tr>
+<tr><td align="center">signed char</td><td align="center">(1)</td><td align="center">(-128 to 127)</td><td align="center">%c </td></tr>
+<tr><td align="center">unsigned char</td><td align="center">(1)</td><td align="center">(0 to 255)</td><td align="center">%c</td></tr>
+<tr><td align="center">float</td><td align="center">(4)</td><td></td><td align="center">%f</td></tr>
+<tr><td align="center">double</td><td align="center">(8)</td><td></td><td align="center">%lf</td></tr>
+<tr><td align="center">long double</td><td align="center">(12)</td><td></td><td align="center">%Lf</td></tr>
+
+</table><br>
+We can use the sizeof() operator to check the size of a variable. See the following C program for the
+ usage of the various data types:
+
+<p>
+#include <stdio.h><br>
+int main()<br>
+{<br>
+    int a = 1;<br>
+    char b ='G';<br>
+    double c = 3.14;<br>
+    printf("Hello World!\n");<br>
+ 
+   <p style="color:cyan"> //printing the variables defined above along with their sizes</p>
+    printf("Hello! I am a character. My value is %c and "
+           "my size is %lu byte.\n", b,sizeof(char));<br>
+   <p style="color:cyan"> //can use sizeof(b) above as well</p>
+ 
+    printf("Hello! I am an integer. My value is %d and "
+           "my size is %lu  bytes.\n", a,sizeof(int));
+   <p style="color:cyan"> //can use sizeof(a) above as well</p>
+ 
+    printf("Hello! I am a double floating point variable."
+           " My value is %lf and my size is %lu bytes.\n",c,sizeof(double));<br>
+   <p style="color:cyan"> //can use sizeof(c) above as well</p>
+ 
+    printf("Bye! See you soon. :)\n");<br>
+ 
+    return 0;<br>
+}<br>
+</p>
+
+<p style="color:magenta">
+Output:<br>
+Hello World!<br>
+Hello! I am a character. My value is G and my size is 1 byte.<br>
+Hello! I am an integer. My value is 1 and my size is 4  bytes.<br>
+Hello! I am a double floating point variable. My value is 3.140000 and my size i
+s 8 bytes.<br>
+Bye! See you soon. :)<br>
+</p>
+<h2>Static Variables in C</h2>
+<p style="color:blue">Static variables have a property of preserving their value even after they are out of 
+their scope!Hence, static variables preserve their previous value in their previous scope and are not 
+initialized again in the new scope.</p>
+Syntax:<br>
+
+<p style="color:red">static data_type var_name = var_value; </p>
+
+
+Following are some interesting facts about static variables in C.<br>
+
+<p style="color:green">1) A static int variable remains in memory while the program is running. A normal
+ or auto variable is destroyed when a function call where the variable was declared is over.</p>
+
+<p style="color:indigo">For example, we can use static int to count number of times a function is called
+, but an auto variable can’t be sued for this purpose.</p>
+
+<p style="color:red">For example below program prints “1 2”</p>
+
+<p style="color:blue">     
+#include<stdio.h><br>
+int fun()<br>
+{<br>
+ static int count = 0;<br>
+  count++;<br>
+  return count;<br>
+}<br>
+  
+int main()<br>
+{<br>
+  printf("%d ", fun());<br>
+  printf("%d ", fun());<br>
+  return 0;<br>
+}<br>
+Output:<br>
+1 2</p><br>
+
+<p style="color:red">But below program prints 1 1</p>
+ 
+<p style="color:blue">
+#include<stdio.h><br>
+int fun()<br>
+{<br>
+  int count = 0;<br>
+  count++;<br>
+  return count;<br>
+}<br>
+  
+int main()<br>
+{<br>
+  printf("%d ", fun());<br>
+
+  printf("%d ", fun());<br>
+
+  return 0;<br>
+
+}<br>
+Output:<br>
+1 1
+</p><br>
+
+<p style="color:green">2) Static variables are allocated memory in data segment, not stack segment. See
+ memory layout of C programs for details.</p>
+
+<p style="color:magenta">3) Static variables (like global variables) are initialized as 0 if not 
+initialized explicitly. For example in the below program, value of x is printed as 0, while value of y 
+is something garbage. See this for more details.</p>
+
+<p style="color:blue">
+#include <stdio.h><br>
+int main()<br>
+{<br>
+    static int x;<br>
+    int y;<br>
+    printf("%d \n %d", x, y);<br>
+}<br>
+Output:<br>
+0 
+[some_garbage_value] 
+</p><br>
+<p style="color:green">4) In C, static variables can only be initialized using constant literals. For
+ example, following program fails in compilation. See this for more details.</p>
+
+<p style="color:brown">
+#include<stdio.h><br>
+int initializer(void)<br>
+{<br>
+    return 50;<br>
+}<br>
+  
+int main()<br>
+{<br>
+    static int i = initializer();<br>
+    printf(" value of i = %d", i);<br>
+    getchar();<br>
+    return 0;<br>
+}<br>
+Output<br>
+ In function 'main':
+9:5: error: initializer element is not constant
+     static int i = initializer();
+</p><br>     ^
+<p style="color:red">Please note that this condition doesn’t hold in C++. So if you save the program as
+ a C++ program, it would compile \and run fine.</p> 
+
+<p style="color:brown">5) Static global variables and functions are also possible in C/C++. The purpose 
+of these is to limit scope of a variable or function to a file. Please refer Static functions in C for
+ more details.</p>
+
+<p><h2><code>
+<a href="DataTypes.html">To move up ^</a> <br>
+<a href="StorageAndClasses.html">Next Page >></a><br>
+<a href="VariableDeclarationAndDefinition.html">Previous page<<</a><br>
+<a href="TechEdu.html">Menu page</a>
+</code></h2></p>
+
+</body>
+</html>
+
+

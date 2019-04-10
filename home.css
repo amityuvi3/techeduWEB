@@ -1,0 +1,45 @@
+<style>
+th {
+    list-style-type: none;
+    margin: 0;
+    padding:50;
+    overflow: hidden;
+    background-color: aqua;
+}
+
+th {
+    float: left;
+}
+
+th a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+}
+
+table a:hover {
+    background-color: blueviolet;
+}
+
+ th.shift
+{
+    text-decoration:none;
+    text-decoration-color:red;
+    text-align-last: right;
+}
+
+    
+    body
+    {
+    background-image:url('Amit1.jpg');
+    background-repeat:no-repeat;
+    background-size:contain;
+ 
+     background-position:right;
+    background-attachment: fixed;
+            
+    }
+ </style>
+    

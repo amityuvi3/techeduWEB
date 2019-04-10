@@ -1,0 +1,197 @@
+﻿<!doctype html>
+<head>
+<title>TechEdu5</title>
+</head>
+<body>
+<marquee attribute_name="attribute_value" attributes>
+<h1><p style="color:purple"> Pointer in C Programming </h1><hr></p>
+</marquee>
+
+<h2>Pointer</h2>
+<p style="color:red">
+A pointer is a variable whose value is the address of another variable, i.e., direct address of the 
+memory location. Like any variable or constant, you must declare a pointer before using it to store any
+ variable address. The general form of a pointer variable declaration is −</br></br>
+
+type *var-name;</br></br>
+Here, type is the pointer's base type; it must be a valid C data type and var-name is the name of the
+ pointer variable. The asterisk * used to declare a pointer is the same asterisk used for multiplication
+. However, in this statement the asterisk is being used to designate a variable as a pointer.</p>
+ <p style="color:purple">
+Take a look at some of the valid pointer declarations −</br>
+
+1.int    *ip;   </br>	
+ /* pointer to an integer */</br>
+2.double *dp; 	</br>	
+   /* pointer to a double */</br>
+3.float  *fp; 	</br>	
+   /* pointer to a float */</br>
+4.char   *ch   	</br>	
+  /* pointer to a character */</br>
+The actual data type of the value of all pointers, whether integer, float, character, or otherwise, is 
+the same, a long hexadecimal number that represents a memory address. The only difference between
+ pointers of different data types is the data type of the variable or constant that the pointer points
+ to.</p>
+
+<h3>How to Use Pointers?</h3>
+<p style="color:green">
+There are a few important operations, which we will do with the help of pointers very frequently. (a)
+ We define a pointer variable, (b) assign the address of a variable to a pointer and (c) finally access
+ the value at the address available in the pointer variable. This is done by using unary operator * that
+ returns the value of the variable located at the address specified by its operand. The following
+ example makes use of these operations −</p>
+<p style="color:brown"><code>
+#include <stdio.h></br>
+
+int main () </br>
+{</br>
+
+   int  var = 20;  </br>
+    /* actual variable declaration */</br>
+   int  *ip;     </br>
+    /* pointer variable declaration */</br>
+
+   ip = &var;  </br>
+   /* store address of var in pointer variable*/</br>
+
+   printf("Address of var variable: %x\n", &var  );</br>
+
+   /* address stored in pointer variable */</br>
+   printf("Address stored in ip variable: %x\n", ip );</br>
+
+   /* access the value using the pointer */
+   printf("Value of *ip variable: %d\n", *ip );</br>
+
+   return 0;</br>
+}</br>
+</code></p>
+<p style="color:blue">
+When the above code is compiled and executed, it produces the following result −</br>
+
+Address of var variable: bffd8b3c</br>
+Address stored in ip variable: bffd8b3c</br>
+Value of *ip variable: 20</p>
+<h3>NULL Pointer</h3>
+<p style="color:magenta">
+It is always a good practice to assign a NULL value to a pointer variable in case you do not have an 
+exact address to be assigned. This is done at the time of variable declaration. A pointer that is 
+assigned NULL is called a null pointer.</br></br>
+
+The NULL pointer is a constant with a value of zero defined in several standard libraries. Consider
+ the following program −</p>
+
+<p style="color:violet"><code>
+#include <stdio.h></br>
+
+int main ()</br>
+ {</br>
+
+   int  *ptr = NULL;</br>
+
+   printf("The value of ptr is : %x\n", ptr  );</br>
+ 
+   return 0;</br>
+}</br>
+</code></p>
+<p style="color:cyan">
+When the above code is compiled and executed, it produces the following result −</br>
+
+The value of ptr is 0</br>
+In most of the operating systems, programs are not permitted to access memory at address 0 because that 
+memory is reserved by the operating system. However, the memory address 0 has special significance; it
+ signals that the pointer is not intended to point to an accessible memory location. But by convention,
+ if a pointer contains the null (zero) value, it is assumed to point to nothing.</p></br>
+<p style="color:purple">
+To check for a null pointer, you can use an 'if' statement as follows −</br>
+
+if(ptr)     /* succeeds if p is not null */</br>
+if(!ptr)    /* succeeds if p is null */</br>
+</p>
+<h3>Pointers in Detail</h3>
+<p style="color:cream">
+Pointers have many but easy concepts and they are very important to C programming. The following
+ important pointer concepts should be clear to any C programmer −</p>
+<table border="3px" width="1200" bgcolor="pink"><tr>
+<th>Sr.No.</th>
+<th>Concept</th>
+<th>Description</th>
+</tr>
+<tr>
+<td align="center">1.</td>
+<td align="center">Pointer arithmetic</td>
+<td align="center">There are four arithmetic operators that can be used in pointers: ++, --, +, -</td>
+</tr>
+<tr>
+<td align="center">2.</td>
+<td align="center">Array of pointers</td>
+<td align="center">You can define arrays to hold a number of pointers.</td>
+</tr>
+<tr>
+<td align="center">3.</td>
+<td align="center">Pointer to pointer</td>
+<td align="center">C allows you to have pointer on a pointer and so on.</td>
+</tr>
+<tr>
+<td align="center">4.
+<td align="center">Passing pointers to functions in C</yd>
+<td align="center">Passing an argument by reference or by address enable the passed argument to be 
+changed in the calling function by the called function.</td>
+</tr>
+<tr>
+<td align="center">5.</td>
+<td align="center">Return pointer from functions in C</td>
+<td align="center">C allows a function to return a pointer to the local variable, static variable, and 
+dynamically allocated memory as well.</td>
+</tr>
+</table>
+<p style="color:blue">
+Note : Pointers contain addresses. Adding two addresses makes no sense, because there is no idea what 
+it would point to. Subtracting two addresses lets you compute the offset between these two addresses.
+</p?
+
+<b>Write a C program to illustrate Pointer Arithmetic</b>
+<p style="color:green"><code>
+#include <stdio.h></br>
+#include<conio.h> </br>
+// Driver program</br>
+int main()</br>
+{</br>
+    // Declare an array</br>
+    int v[3] = {10, 100, 200};</br>
+ 
+    // Declare pointer variable</br>
+    int *ptr;</br>
+ 
+    // Assign the address of v[0] to ptr</br>
+    ptr = v;</br>
+ 
+    for (int i = 0; i < 3; i++)</br>
+    {</br>
+        printf("Value of *ptr = %d\n", *ptr);</br>
+        printf("Value of ptr = %p\n\n", ptr);</br>
+ 
+        // Increment pointer ptr by 1</br>
+        ptr++;</br>
+    }</br>
+}</br>
+</code></p>
+<p style="color:magenta"></br>
+Output:Value of *ptr = 10</br>
+Value of ptr = 0x7ffcae30c710</br>
+
+Value of *ptr = 100</br>
+Value of ptr = 0x7ffcae30c714</br>
+
+Value of *ptr = 200</br>
+Value of ptr = 0x7ffcae30c718</br>
+</P>
+
+<p><h2><code>
+<a href="Pointers.html">To move up ^</a> </br>    
+<a href="Enum.html">Next Page ></a></br>
+<a href="Functions.html">Previous page<</a></br>
+<a href="TechEdu.html">Menu page</a>
+</h2></p></code>
+
+</body>
+</html>

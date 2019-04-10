@@ -1,0 +1,222 @@
+﻿<!doctype html>
+<head>
+<title>TechEdu5</title>
+</head>
+<body>
+<marquee attribute_name="attribute_value" attributes>
+<h1><p style="color:purple">Enum in C Programming </h1><hr></p>
+</marquee>
+
+
+
+<h2>Structure</h2>
+<p style="color:red">
+Arrays allow to define type of variables that can hold several data items of the same kind. Similarly
+ structure is another user defined data type available in C that allows to combine data items of 
+different kinds.</br></br>
+
+Structures are used to represent a record. Suppose you want to keep track of your books in a library.
+ You might want to track the following attributes about each book −</br></br>
+
+Title</br>
+Author</br>
+Subject</br>
+Book ID</br>
+</p>
+<h3>Defining a Structure</h3>
+<p style="color:purple">
+To define a structure, you must use the struct statement. The struct statement defines a new data type,
+ with more than one member. The format of the struct statement is as follows −</br></br>
+<code>
+struct [structure tag] {</br>
+
+   member definition;</br>
+   member definition;</br>
+   ...</br>
+   member definition;</br>
+} [one or more structure variables]; </br>
+</code</p> 
+<p style="color:gree">
+The structure tag is optional and each member definition is a normal variable definition, such as int i;
+ or float f; or any other valid variable definition. At the end of the structure's definition, before 
+the final semicolon, you can specify one or more structure variables but it is optional. Here is the
+ way you would declare the Book structure −</br></br>
+<code>
+struct Books {</br>
+   char  title[50];</br>
+   char  author[50];</br>
+   char  subject[100];</br>
+   int   book_id;</br>
+} book;  </br>
+</code></p>
+<h3>Accessing Structure Members</h3>
+<p style="color:brown">
+To access any member of a structure, we use the member access operator (.). The member access operator
+ is coded as a period between the structure variable name and the structure member that we wish to 
+access. You would use the keyword struct to define variables of structure type.</p></br>
+
+<p style="color:red"?
+<b>How to declare structure variables?</b></p>
+
+A structure variable can either be declared with structure declaration or as a separate declaration 
+like basic types.</br></br>
+<p style="color:navy"><code>
+// A variable declaration with structure declaration.</br></br>
+struct Point</br>
+{</br>
+   int x, y;</br>
+} p1;  </br>// The variable p1 is declared with 'Point'</br>
+ 
+ 
+// A variable declaration like basic data types</br>
+struct Point</br>
+{</br>
+   int x, y;</br>
+}; </br>
+ 
+int main()</br>
+{</br>
+   struct Point p1; </br> // The variable p1 is declared like a normal variable</br>
+}</code></p>
+
+Note: In C++, the struct keyword is optional before in declaration of variable. In C, it is mandatory.</br></br>
+
+<p style="color:red"> 
+<b>How to initialize structure members?</b>
+<p style="color:blue">
+Structure members cannot be initialized with declaration. For example the following C program fails in
+ compilation.</br></br>
+<code>
+struct Point</br>
+{</br>
+   int x = 0;  </br>// COMPILER ERROR:  cannot initialize members here</br>
+   int y = 0;  </br>// COMPILER ERROR:  cannot initialize members here</br>
+}; </code></p>
+<p style="color:magenta">
+The reason for above error is simple, when a datatype is declared, no memory is allocated for it.
+ Memory is allocated only when variables are created.</br>
+
+Structure members can be initialized using curly braces ‘{}’. For example, following is a valid 
+initialization.</p></br>
+<code>
+struct Point</br>
+{</br>
+   int x, y;</br>
+}; </br>
+ 
+int main()</br>
+{</br>
+   // A valid initialization. member x gets value 0 and y</br>
+   // gets value 1.  The order of declaration is followed.</br>
+   struct Point p1 = {0, 1}; </br>
+}</code></p>
+Run on IDE
+<p style="color:red"> 
+<b>How to access structure elements?</b></p>
+Structure members are accessed using dot (.) operator.</br></br>
+<p style="color:green"><code>
+struct Point</br>
+{</br>
+   int x, y;</br>
+};</br>
+ 
+int main()</br>
+{</br>
+   struct Point p1 = {0, 1};</br>
+ 
+   // Accesing members of point p1</br>
+   p1.x = 20;</br>
+   printf ("x = %d, y = %d", p1.x, p1.y);</br>
+ 
+   return 0;</br>
+}</code></p>
+Output:</br>
+
+20  1</br></br>
+ <p style="color:red">
+<b>What is designated Initialization?</b></p>
+<p style="color:purple">
+Designated Initialization allows structure members to be initialized in any order. This feature has
+ been added in C99 standard.</br></br>
+<code>
+struct Point</br>
+{</br>
+   int x, y, z;</br>
+};</br>
+ 
+int main()</br>
+{</br>
+   // Examples of initializtion using designated initialization</br>
+   struct Point p1 = {.y = 0, .z = 1, .x = 2};</br>
+   struct Point p2 = {.x = 20};</br>
+ 
+   printf ("x = %d, y = %d, z = %d\n", p1.x, p1.y, p1.z);</br>
+   printf ("x = %d", p2.x);</br>
+   return 0;</br>
+}</code></p>
+Output:</br>
+
+x = 2, y = 0, z = 1</br>
+x = 20</br>
+This feature is not available in C++ and works only in C.</br></br>
+
+ <p style="color:red">
+<b>What is an array of structures?</b></p>
+Like other primitive data types, we can create an array of structures.</br>
+<p style="color:brown"><code>
+struct Point</br>
+{</br>
+   int x, y;</br>
+};</br>
+ 
+int main()</br>
+{</br>
+   // Create an array of structures</br>
+   struct Point arr[10];</br>
+ 
+   // Access array members</br>
+   arr[0].x = 10;</br>
+   arr[0].y = 20;</br>
+ 
+   printf("%d %d", arr[0].x, arr[0].y);</br>
+   return 0;</br>
+}</code></p>
+Output:</br>
+
+10  20</br></br>
+ <p style="color:red">
+<b>What is a structure pointer?</b>
+Like primitive types, we can have pointer to a structure. If we have a pointer to structure, members
+ are accessed using arrow ( -> ) operator.</br>
+<p style="color:blue"><code>
+struct Point</br>
+{</br>
+   int x, y;</br>
+};</br>
+ 
+int main()</br>
+{</br>
+   struct Point p1 = {1, 2};</br>
+ 
+   // p2 is a pointer to structure p1</br>
+   struct Point *p2 = &p1;</br>
+ 
+   // Accessing structure members using structure pointer</br>
+   printf("%d %d", p2->x, p2->y);</br>
+   return 0;</br>
+}</code></p>
+Output:</br>
+
+1  2</br>
+
+
+
+<p><h2><code>
+<a href="Enum.html">To move up ^</a> </br>    
+<a href="Struct.html">Next Page ></a></br>
+<a href="Functions.html">Previous page<</a></br>
+<a href="TechEdu.html">Menu page</a>
+</h2></p></code>
+
+</body>
+</html>

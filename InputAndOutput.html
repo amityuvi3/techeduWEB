@@ -1,0 +1,198 @@
+<!doctype html>
+<head>
+<title>TechEdu5</title>
+</head>
+<body>
+<marquee attribute_name="attribute_value" attributes>
+<h1><p style="color:purple">Input and OutPut in C</h1><hr></p>
+</marquee>
+
+<p style="color:red">C programming has several in-built library functions to perform input and output 
+tasks.</p>
+
+<h3><p style="color:grey">Two commonly used functions for I/O (Input/Output) are printf() and scanf().</p>
+</h3>
+<p style="color:indigo">The scanf() function reads formatted input from standard input (keyboard)
+ whereas the printf() function sends formatted output to the standard output (screen).</p>
+
+<h3><p style="color:red">Example #1: C Output</p></h3>
+#include <stdio.h>     <p style="color:cyan"> //This is needed to run printf() function.</p>
+int main()<br>
+{
+    printf("C Programming");  <p style="color:cyan">//displays the content inside quotation</p>
+    return 0;<br>
+}
+<p style="color:blue">Output
+
+C Programming</p><br>
+<p style="color:red">How this program works?</p>
+<ol type="1">
+<p style="color:green">All valid C program must contain the main() function. The code execution begins
+ from the start of main() function.</li>
+<li>The printf() is a library function to send formatted output to the screen. The printf() function is
+ declared in "stdio.h" header file.</li>
+<li>Here, stdio.h is a header file (standard input output header file) and #include is a preprocessor 
+4directive to paste the code from the header file when necessary. When the compiler encounters printf()
+ function and doesn't find stdio.h header file, compiler shows error.</li>
+<li>The return 0; statement is the "Exit status" of the program. In simple terms, program ends.</li></p>
+<h3><p style="color:red">Example #2: C Integer Output</p></h3>
+<p style="color:blue"><br>
+#include <stdio.h><br>
+int main()<br>
+{<br>
+    int testInteger = 5;<br>
+    printf("Number = %d", testInteger);<br>
+    return 0;<br>
+}<br>
+Output<br>
+
+Number = 5</p><br>
+<p style="color:magenta">Inside the quotation of printf() function, there is a format string "%d" 
+(for integer). If the format string matches the argument (testInteger in this case), it is displayed
+ on the screen.</p>
+
+<h3><p style="color:red">Example #3: C Integer Input/Output</p></h3>
+<p style="color:green"><br>
+#include <stdio.h><br>
+int main()<br>
+{<br>
+    int testInteger;<br>
+    printf("Enter an integer: ");<br>
+    scanf("%d",&testInteger); <br> 
+    printf("Number = %d",testInteger);<br>
+    return 0;<br>
+}<br>
+Output<br>
+
+Enter an integer: 4<br>
+Number = 4</p><br>
+
+<p style="color:magenta">The scanf() function reads formatted input from the keyboard. When user enters
+ an integer, it is stored in variable testInteger.</p>
+
+<p style="color:brown">Note the '&' sign before testInteger; &testInteger gets the address of 
+testInteger and the value is stored in that address.</p>
+
+<h3><p style="color:red">Example #4: C Floats Input/Output</p></h3>
+#include <stdio.h><br>
+int main()<br>
+{<br>
+    float f;<br>
+    printf("Enter a number: ");
+<p style="color:cyan">// %f format string is used in case of floats</p>
+    scanf("%f",&f);<br>
+    printf("Value = %f", f);<br>
+    return 0;<br>
+}<br>
+<p style="color:magenta">Output<br>
+
+Enter a number: 23.45<br>
+Value = 23.450000</p><br>
+<p style="color:orange">The format string "%f" is used to read and display formatted in case of floats.</p>
+
+<h3><p style="color:red">Example #5: C Character I/O</p></h3>
+<p style="color:blue">#include <stdio.h><br>
+int main()<br>
+{<br>
+    char chr;<br>
+    printf("Enter a character: ");<br>
+    scanf("%c",&chr); <br>    
+    printf("You entered %c.",chr); <br> 
+    return 0;<br>
+} <br>  
+Output<br>
+
+Enter a character: g<br>
+You entered g.</p><br>
+Format string %c is used in case of character types.<br>
+
+<h3><p style="color:red">Little bit on ASCII code</p></h3>
+<p style="color:green">When a character is entered in the above program, the character itself is not
+ stored. Instead, a numeric value(ASCII value) is stored.</p>
+
+<p style="color:magenta">And when we displayed that value using "%c" text format, the entered character
+ is displayed.</p>
+
+<h3><p style="color:red">Example #6: C ASCII Code</p></h3>
+#include <stdio.h><br>
+int main()<br>
+{<br>
+    char chr;<br>
+    printf("Enter a character: ");<br>
+    scanf("%c",&chr); <br>    
+
+   <p style="color:cyan"> // When %c text format is used, character is displayed in case of character
+ types</p>
+    printf("You entered %c.\n",chr);  
+
+<p style="color:cyan">// When %d text format is used, integer is displayed in case of character types</p>
+    printf("ASCII value of %c is %d.", chr, chr);<br>  
+    return 0;<br>
+}
+<p style="color:blue">Output
+
+Enter a character: g<br>
+You entered g.<br>
+ASCII value of g is 103.</p><br>
+<p style="color:green>The ASCII value of character 'g' is 103. When, 'g' is entered, 103 is stored in 
+variable var1 instead of g.
+You can display a character if you know ASCII code of that character. This is shown by following 
+example.</p>
+
+<h3><p style="color:Example #6: C ASCII Code</p></h3>
+#include <stdio.h><br>
+int main()<br>
+{<br>
+    int chr = 69;<br>
+    printf("Character having ASCII value 69 is %c.",chr);<br>
+    return 0;<br>
+}  <br>
+Output<br>
+
+Character having ASCII value 69 is E.</p><br>
+More on Input/Output of floats and Integers<br>
+Integer and floats can be displayed in different formats in C programming.<br>
+
+<h3><p style="color:red">Example #7: I/O of Floats and Integers</p></h3>
+#include <stdio.h><br>
+int main()<br>
+{<br>
+
+    int integer = 9876;<br>
+    float decimal = 987.6543;<br>
+
+   <p style="color:cyan"> //  Prints the number right justified within 6 columns</p>
+    printf("4 digit integer right justified to 6 column: %6d\n", integer);<br>
+
+   <p style="color:cyan"> // Tries to print number right justified to 3 digits 
+   //but the number is not right adjusted because there are only 4 numbers</p>
+    printf("4 digit integer right justified to 3 column: %3d\n", integer);<br>
+
+   <p style="color:cyan"> // Rounds to two digit places</p>
+    printf("Floating point number rounded to 2 digits: %.2f\n",decimal);<br>
+
+    <p style="color:cyan">// Rounds to 0 digit places</p>
+    printf("Floating point number rounded to 0 digits: %.f\n",987.6543);<br>
+
+   <p style="color:cyan"> // Prints the number in exponential notation(scientific notation)</p>
+    printf("Floating point number in exponential form: %e\n",987.6543);<br>
+    return 0;<br>
+} <br>
+<p style="color:red">  
+Output<br>
+
+4 digit integer right justified to 6 column:   9876<br>
+4 digit integer right justified to 3 column: 9876<br>
+Floating point number rounded to 2 digits: 987.65<br>
+Floating point number rounded to 0 digits: 988<br>
+Floating point number in exponential form: 9.876543e+02</p>
+
+<p><h2>
+<a href="InputAndOutput.html">To move up ^</a> <br>
+<a href="Operators.html">Next Page >></a><br>
+<a href="StorageAndClasses.html">Previous page<<</a><br>
+<a href="TechEdu.html">Menu page</a>
+</h2></p>
+
+</body>
+</html> 

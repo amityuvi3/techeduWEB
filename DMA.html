@@ -1,0 +1,156 @@
+﻿<!doctype html>
+<head>
+<title>TechEdu5</title>
+</head>
+<body>
+<marquee attribute_name="attribute_value" attributes>
+<h1><p style="color:purple">Dynamic Memory Management in C Programming </h1><hr></p>
+</marquee>
+
+<h2>Dynamic Memory Management</h2>
+<p style ="color:red">
+ In dynamic memory management in C. The C programming language provides several functions for memory 
+allocation and management. These functions can be found in the <stdlib.h> header file.</p> </br>    
+<table border="3px" width="1200" bgcolor="pink">
+<tr>  <th>Sr.No.</th>   <th>Function</th>   <th>Description</th>  </tr>
+<tr>
+<td align="center">1.</td>	
+<td align="center">void *calloc(int num, int size);</td>
+<td align="center">This function allocates an array of num elements each of which size in bytes will be
+ size.</td>
+</tr><tr>
+<td align="center">2.</td>	
+<td align="center">void free(void *address);</td>
+<td align="center">This function releases a block of memory block specified by address.</td>
+</tr><tr>
+<td align="center">3.</td>	
+<td align="center">void *malloc(int num);</td>
+<td align="center">This function allocates an array of num bytes and leave them uninitialized.</td>
+</tr><tr>
+<td align="center">4.</td>	
+<td align="center">void *realloc(void *address, int newsize);</td>
+<td align="center">This function re-allocates memory extending it upto newsize.</td>
+</tr></table>
+<h3>Allocating Memory Dynamically</h3>
+<p style="color:green">
+While programming, if you are aware of the size of an array, then it is easy and you can define it as 
+an array. For example, to store a name of any person, it can go up to a maximum of 100 characters, so 
+you can define something as follows − </br>     </br>    
+
+char name[100]; </br>     </br>    
+But now let us consider a situation where you have no idea about the length of the text you need to
+ store, for example, you want to store a detailed description about a topic. Here we need to define a
+ pointer to character without defining how much memory is required and later, based on requirement,</p>
+ </br>    
+<p style="color:red">
+ <b>we can allocate memory as shown in the below example −</b> </br>    
+<code>
+#include <stdio.h> </br>    
+#include <stdlib.h> </br>    
+#include <string.h> </br>    
+
+int main()  </br>    
+{ </br>    
+
+   char name[100]; </br>    
+   char *description; </br>    
+
+   strcpy(name, "Zara Ali"); </br>    
+
+   /* allocate memory dynamically */ </br>    
+   description = malloc( 200 * sizeof(char) ); </br>    
+	
+   if( description == NULL ) </br>    
+ { </br>    
+      fprintf(stderr, "Error - unable to allocate required memory\n"); </br>    
+   }  </br>    else </br>     { </br>    
+      strcpy( description, "Zara ali a DPS student in class 10th"); </br>    
+   } </br>    
+   
+   printf("Name = %s\n", name ); </br>    
+   printf("Description: %s\n", description ); </br>    
+} </br>    
+</code></p>
+<p style="color:cyan">
+Output: </br>    
+
+Name = Zara Ali </br>    
+Description: Zara ali a DPS student in class 10th </br>    
+Same program can be written using calloc(); only thing is you need to replace malloc with calloc as 
+follows − </br>     </br>    
+
+calloc(200, sizeof(char)); </br>     </br>    
+So you have complete control and you can pass any size value while allocating memory, unlike arrays 
+where once the size defined, you cannot change it.</p> </br>    
+<p style="color:red">
+<b>Resizing and Releasing Memory</b>
+<p style="color:blue">
+When your program comes out, operating system automatically release all the memory allocated by your
+ program but as a good practice when you are not in need of memory anymore then you should release that
+ memory by calling the function free(). </br>  </br>    
+
+Alternatively, you can increase or decrease the size of an allocated memory block by calling the 
+function realloc(). Let us check the above program once again and make use of realloc() and free() 
+functions −</p> </br>    
+<p style="color:magenta">
+<code>
+#include <stdio.h> </br>    
+#include <stdlib.h> </br>    
+#include <string.h> </br>    
+
+int main()  </br>    
+  { </br>    
+
+   char name[100]; </br>    
+   char *description; </br>    
+
+   strcpy(name, "Zara Ali"); </br>    
+
+   /* allocate memory dynamically */ </br>    
+   description = malloc( 30 * sizeof(char) ); </br>    
+	
+   if( description == NULL ) </br>    
+ { </br>    
+      fprintf(stderr, "Error - unable to allocate required memory\n"); </br>    
+    }  </br>    
+  else  </br>   
+    { </br>    
+      strcpy( description, "Zara ali a DPS student."); </br>    
+   } </br>    
+	
+   /* suppose you want to store bigger description */ </br>    
+   description = realloc( description, 100 * sizeof(char) ); </br>    
+	
+   if( description == NULL )  </br>    
+      { </br>    
+      fprintf(stderr, "Error - unable to allocate required memory\n"); </br>    
+      }  </br>    
+    else </br>    
+      { </br>    
+      strcat( description, "She is in class 10th"); </br>    
+      } </br>    
+   
+   printf("Name = %s\n", name ); </br>    
+   printf("Description: %s\n", description ); </br>    
+
+   /* release memory using free() function */ </br>    
+   free(description); </br>    
+} </br>    
+</code></p>
+<p style="color:purple">
+Output: </br>    
+
+Name = Zara Ali </br>    
+Description: Zara ali a DPS student.She is in class 10th </br>    
+</p>
+
+
+<p><h2><code>
+<a href="DMA.html">To move up ^</a> </br>    
+<a href="PIC.html">Next Page >></a></br>
+<a href="FileHandling.html">Previous page<<</a></br>
+<a href="TechEdu.html">Menu page</a>
+</h2></p></code>
+
+</body>
+</html>
